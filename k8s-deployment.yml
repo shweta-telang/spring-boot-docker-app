@@ -18,7 +18,7 @@ spec:
   spec:
    containers:
    - name: javawebappcontainer
-     image: Shweta/spring-boot-docker-app
+     image: 9834823123/spring-boot-docker-app
      ports:
      - containerPort: 8080
 ---
