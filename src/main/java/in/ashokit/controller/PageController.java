@@ -8,6 +8,6 @@ public class PageController {
 
     @GetMapping("/login")
     public String loginPage() {
-        return "login"; // loads login.html from static/
+        return "login"; // will now pick from templates/login.html
     }
 }
