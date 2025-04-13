@@ -8,6 +8,6 @@ public class PageController {
 
     @GetMapping("/login")
     public String loginPage() {
-        return "login"; // will now pick from templates/login.html
+        return "login";  // refers to templates/login.html
     }
 }
