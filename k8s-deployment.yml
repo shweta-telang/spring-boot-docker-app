@@ -2,35 +2,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: javawebdeploy
+  name: javawebdeploy
 spec:
- replicas: 2
- strategy: 
-  type: RollingUpdate
- selector:
-  matchLabels:
-   app: javawebapp
- template:
-  metadata:
-   name: javawebpod
-   labels:
-    app: javawebapp
-  spec:
-   containers:
-   - name: javawebappcontainer
-     image: 9834823123/spring-boot-docker-app
-     ports:
-     - containerPort: 8080
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: javawebapp
+  template:
+    metadata:
+      name: javawebpod
+      labels:
+        app: javawebapp
+    spec:
+      containers:
+        - name: javawebappcontainer
+          image: 9834823123/spring-boot-docker-app:v2
+          ports:
+            - containerPort: 8080
+
 ---
 apiVersion: v1
 kind: Service
 metadata:
- name: javawebsvc
+  name: javawebsvc
 spec:
- type: LoadBalancer
- selector:
-  app: javawebapp
- ports:
-  - port: 80
-    targetPort: 8080
-...
+  type: LoadBalancer
+  selector:
+    app: javawebapp
+  ports:
+    - port: 80
+      targetPort: 8080
