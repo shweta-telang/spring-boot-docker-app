@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: javawebappcontainer
-          image: 9834823123/spring-boot-docker-app:v2
+          image: 9834823123/spring-boot-docker-app:v3
           ports:
             - containerPort: 8080
 
